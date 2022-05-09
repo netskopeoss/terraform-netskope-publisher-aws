@@ -1,6 +1,5 @@
 variable "publisher_name" {
   description = "Publisher Name"
-  default     = "ns-publisher-tf"
   type        = string
 }
 

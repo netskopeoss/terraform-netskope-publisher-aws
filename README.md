@@ -79,7 +79,7 @@ No modules.
 | <a name="input_aws_key_name"></a> [aws\_key\_name](#input\_aws\_key\_name) | AWS SSH Key Name | `string` | n/a | yes |
 | <a name="input_aws_security_group"></a> [aws\_security\_group](#input\_aws\_security\_group) | AWS SG Id | `string` | n/a | yes |
 | <a name="input_aws_subnet"></a> [aws\_subnet](#input\_aws\_subnet) | AWS Subnet Id | `string` | n/a | yes |
-| <a name="input_publisher_name"></a> [publisher\_name](#input\_publisher\_name) | Publisher Name | `string` | `"ns-publisher-tf"` | no |
+| <a name="input_publisher_name"></a> [publisher\_name](#input\_publisher\_name) | Publisher Name | `string` | n/a | yes |
 
 ## Outputs
 
