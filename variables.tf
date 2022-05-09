@@ -4,12 +4,6 @@ variable "publisher_name" {
   type        = string
 }
 
-variable "aws_region" {
-  description = "AWS region"
-  default     = "us-east-1"
-  type        = string
-}
-
 variable "aws_instance_type" {
   description = "AWS Instance Type"
   default     = "t3.medium" //Reccomended Publisher Type
