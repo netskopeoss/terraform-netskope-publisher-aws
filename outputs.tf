@@ -4,6 +4,11 @@ output "publisher_name" {
   value       = netskope_publishers.Publisher.name
 }
 
+output "publisher_id" {
+  description = "ID of the Publisher"
+  value       = netskope_publishers.Publisher.id
+}
+
 output "publisher_public_ip" {
   description = "Public IP of the Publisher"
   value       = aws_instance.NPAPublisher.public_ip

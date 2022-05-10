@@ -85,6 +85,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_publisher_id"></a> [publisher\_id](#output\_publisher\_id) | ID of the Publisher |
 | <a name="output_publisher_name"></a> [publisher\_name](#output\_publisher\_name) | Name of the Publisher |
 | <a name="output_publisher_private_ip"></a> [publisher\_private\_ip](#output\_publisher\_private\_ip) | Public IP of the Publisher |
 | <a name="output_publisher_public_ip"></a> [publisher\_public\_ip](#output\_publisher\_public\_ip) | Public IP of the Publisher |
