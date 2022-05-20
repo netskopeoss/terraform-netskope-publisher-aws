@@ -12,6 +12,24 @@ variable "aws_instance_type" {
 variable "associate_public_ip_address" {
   description = "Publisher Assigned Public IP or Not"
   type        = bool
+  default     = false
+}
+
+variable "aws_monitoring" {
+  description = "Enable Detailed Monitoring of AWS Instance"
+  type        = bool
+  default     = true
+}
+
+variable "ebs_optimized" {
+  description = "Enable EBS Optimized"
+  type        = bool
+  default     = true
+}
+
+variable "ebs_encrypted" {
+  description = "Enable EBS Encryption"
+  type        = bool
   default     = true
 }
 
@@ -34,4 +52,16 @@ variable "ami_id" {
   description = "Publisher AMI ID"
   default     = ""
   type        = string
+}
+
+variable "http_endpoint" {
+  description = "Metadata Option http_endpoint"
+  type        = string
+  default     = "enabled"
+}
+
+variable "http_tokens" {
+  description = "Metadata Service Option http_tokens"
+  type        = string
+  default     = "required"
 }
