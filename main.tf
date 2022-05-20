@@ -31,7 +31,6 @@ resource "aws_instance" "NPAPublisher" {
   user_data                   = netskope_publishers.Publisher.token
   monitoring                  = var.aws_monitoring
   ebs_optimized               = var.ebs_optimized
-  encrypted                   = var.ebs_encrypted
   tags = {
     "Name" = var.publisher_name
   }

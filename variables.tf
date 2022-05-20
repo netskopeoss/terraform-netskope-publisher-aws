@@ -27,12 +27,6 @@ variable "ebs_optimized" {
   default     = true
 }
 
-variable "ebs_encrypted" {
-  description = "Enable EBS Encryption"
-  type        = bool
-  default     = true
-}
-
 variable "aws_key_name" {
   description = "AWS SSH Key Name"
   type        = string
