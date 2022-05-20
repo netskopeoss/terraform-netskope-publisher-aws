@@ -30,7 +30,7 @@ resource "aws_instance" "NPAPublisher" {
   vpc_security_group_ids      = [var.aws_security_group]
   user_data                   = netskope_publishers.Publisher.token
   monitoring                  = var.aws_monitoring
-  ebs_optimized               = var.ebs_optimized
+  //ebs_optimized               = var.ebs_optimized
   tags = {
     "Name" = var.publisher_name
   }
