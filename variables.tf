@@ -48,6 +48,12 @@ variable "ami_id" {
   type        = string
 }
 
+variable "iam_instance_profile" {
+  description = "IAM Instance Profile"
+  default     = ""
+  type        = string
+}
+
 variable "http_endpoint" {
   description = "Metadata Option http_endpoint"
   type        = string
