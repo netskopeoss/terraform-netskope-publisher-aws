@@ -48,7 +48,7 @@ resource "aws_instance" "NPAPublisher" {
 
 
 resource "aws_ssm_association" "register_publishers" {
-  count = "${var.use_ssm == "true" ? 1 : 0}"
+  count = "${var.use_ssm == true ? 1 : 0}"
   name = "AWS-RunShellScript"
   
   parameters = {
