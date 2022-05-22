@@ -52,7 +52,7 @@ resource "aws_ssm_association" "register_publishers" {
   name = "AWS-RunShellScript"
   
   parameters = {
-    AutomationAssumeRole = "arn:aws:iam::534321463187:role/NetskopePublisherSSMRole"
+    //AutomationAssumeRole = "arn:aws:iam::534321463187:role/NetskopePublisherSSMRole"
     InstanceId = aws_instance.NPAPublisher.id
     commands = "[ifconfig]"
   }
