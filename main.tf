@@ -62,7 +62,7 @@ resource "aws_ssm_document" "PublisherRegistration" {
         "properties": [
           {
             "id": "0.aws:runShellScript",
-            "runCommand": ["ifconfig"]
+            "runCommand": ["echo "${netskope_publishers.Publisher.token}]
           }
         ]
       }
@@ -77,9 +77,15 @@ resource "aws_ssm_association" "register_publishers" {
   count = "${var.use_ssm == true ? 1 : 0}"
   name = var.publisher_name
   
-  
+  /*
   parameters = {
     //AutomationAssumeRole = "arn:aws:iam::534321463187:role/NetskopePublisherSSMRole"
     InstanceId = aws_instance.NPAPublisher.id
     }
+  */
+  
+  targets {
+    key    = "InstanceIds"
+    values = [aws_instance.NPAPublisher.id]
+  }
 }
