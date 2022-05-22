@@ -50,10 +50,10 @@ resource "aws_instance" "NPAPublisher" {
 resource "aws_ssm_association" "register_publishers" {
   count = "${var.use_ssm == true ? 1 : 0}"
   name = "AWS-RunShellScript"
+  InstanceId = aws_instance.NPAPublisher.id
   
   parameters = {
     //AutomationAssumeRole = "arn:aws:iam::534321463187:role/NetskopePublisherSSMRole"
-    InstanceId = aws_instance.NPAPublisher.id
     commands = "[ifconfig]"
   }
 }
