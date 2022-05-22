@@ -65,3 +65,9 @@ variable "http_tokens" {
   type        = string
   default     = "required"
 }
+
+variable "use_ssm" {
+  description = "Use SSM to Register Publisher"
+  type        = bool
+  default     = false
+}

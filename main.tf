@@ -45,3 +45,15 @@ resource "aws_instance" "NPAPublisher" {
   */
 
 }
+
+
+resource "aws_ssm_association" "register_publishers" {
+  count = "${var.use_ssm == "true" ? 1 : 0}"
+  name = "AWS-RunShellScript"
+  
+  parameters = {
+    AutomationAssumeRole = "arn:aws:iam::534321463187:role/NetskopePublisherSSMRole"
+    InstanceId = module.publisher_aws[0].id
+    commands = ["ifconfig"]
+  }
+}
