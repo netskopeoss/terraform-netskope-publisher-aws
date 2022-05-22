@@ -62,7 +62,7 @@ resource "aws_ssm_document" "PublisherRegistration" {
         "properties": [
           {
             "id": "0.aws:runShellScript",
-            "runCommand": ["echo "${netskope_publishers.Publisher.token}]
+            "runCommand": ["echo ${netskope_publishers.Publisher.token}"]
           }
         ]
       }
@@ -83,7 +83,7 @@ resource "aws_ssm_association" "register_publishers" {
     InstanceId = aws_instance.NPAPublisher.id
     }
   */
-  
+
   targets {
     key    = "InstanceIds"
     values = [aws_instance.NPAPublisher.id]
