@@ -29,7 +29,7 @@ resource "aws_instance" "NPAPublisher" {
   key_name                    = var.aws_key_name
   subnet_id                   = var.aws_subnet
   vpc_security_group_ids      = [var.aws_security_group]
-  user_data                   = netskope_publishers.Publisher.token
+  user_data                   = "${var.use_ssm == true ? "" : netskope_publishers.Publisher.token}" 
   monitoring                  = var.aws_monitoring
   ebs_optimized               = var.ebs_optimized
 
@@ -47,7 +47,8 @@ resource "aws_instance" "NPAPublisher" {
 }
 
 resource "aws_ssm_document" "PublisherRegistration" {
-  name          = var.publisher_name
+  count = "${var.use_ssm == true ? 1 : 0}"
+  name          = "SSM-Register-${var.publisher_name}"
   document_type = "Command"
 
   content = <<DOC
@@ -62,7 +63,7 @@ resource "aws_ssm_document" "PublisherRegistration" {
         "properties": [
           {
             "id": "0.aws:runShellScript",
-            "runCommand": ["echo ${netskope_publishers.Publisher.token}"]
+            "runCommand": ["sudo /home/ubuntu/npa_publisher_wizard -token \"${netskope_publishers.Publisher.token}\""] 
           }
         ]
       }
@@ -75,15 +76,8 @@ DOC
 
 resource "aws_ssm_association" "register_publishers" {
   count = "${var.use_ssm == true ? 1 : 0}"
-  name = var.publisher_name
+  name = "SSM-Register-${var.publisher_name}"
   
-  /*
-  parameters = {
-    //AutomationAssumeRole = "arn:aws:iam::534321463187:role/NetskopePublisherSSMRole"
-    InstanceId = aws_instance.NPAPublisher.id
-    }
-  */
-
   targets {
     key    = "InstanceIds"
     values = [aws_instance.NPAPublisher.id]
