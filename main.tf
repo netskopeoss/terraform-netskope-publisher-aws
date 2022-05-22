@@ -47,7 +47,7 @@ resource "aws_instance" "NPAPublisher" {
 }
 
 resource "aws_ssm_document" "PublisherRegistration" {
-  name          = "NetskopePublisherRegistration"
+  name          = var.publisher_name
   document_type = "Command"
 
   content = <<DOC
@@ -75,7 +75,7 @@ DOC
 
 resource "aws_ssm_association" "register_publishers" {
   count = "${var.use_ssm == true ? 1 : 0}"
-  name = "NetskopePublisherRegistration"
+  name = var.publisher_name
   
   
   parameters = {
