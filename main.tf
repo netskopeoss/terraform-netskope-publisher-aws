@@ -46,7 +46,7 @@ resource "aws_instance" "NPAPublisher" {
 
 }
 
-resource "aws_ssm_document" PublisherRegistration" {
+resource "aws_ssm_document" "PublisherRegistration" {
   name          = "NetskopePublisherRegistration"
   document_type = "Command"
 
@@ -70,6 +70,7 @@ resource "aws_ssm_document" PublisherRegistration" {
   }
 DOC
 }
+
 
 
 resource "aws_ssm_association" "register_publishers" {
