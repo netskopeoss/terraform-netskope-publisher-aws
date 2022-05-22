@@ -53,7 +53,7 @@ resource "aws_ssm_association" "register_publishers" {
   
   parameters = {
     AutomationAssumeRole = "arn:aws:iam::534321463187:role/NetskopePublisherSSMRole"
-    InstanceId = aws_instance.NPAPublisher[0].id
+    InstanceId = aws_instance.NPAPublisher.id
     commands = ["ifconfig"]
   }
 }
