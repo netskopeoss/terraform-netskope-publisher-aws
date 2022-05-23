@@ -18,8 +18,6 @@ data "aws_ami" "npa-publisher" {
   }
 }
 
-
-
 // Create EC2 Instance for the Publisher
 resource "aws_instance" "NPAPublisher" {
   ami                         = var.ami_id != "" ? var.ami_id : "${data.aws_ami.npa-publisher.id}"
@@ -36,13 +34,12 @@ resource "aws_instance" "NPAPublisher" {
   tags = {
     "Name" = var.publisher_name
   }
-
-  /*
+  
   metadata_options {
     http_endpoint               = var.http_endpoint
     http_tokens                 = var.http_tokens
   }
-  */
+
 
 }
 

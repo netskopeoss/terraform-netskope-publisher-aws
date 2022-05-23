@@ -63,7 +63,7 @@ variable "http_endpoint" {
 variable "http_tokens" {
   description = "Metadata Service Option http_tokens"
   type        = string
-  default     = "required"
+  default     = "optional"
 }
 
 variable "use_ssm" {
