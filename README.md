@@ -32,7 +32,7 @@ module "publisher_aws" {
 
   for_each = toset(["01", "02", "03"])
 
-  publisher_name = "publisher-name${each.key}"
+  publisher_name = "<publisher-name>${each.key}"
 
   aws_key_name   = "<ssh-key-name>"
   aws_subnet         = "<subnet-id>"
