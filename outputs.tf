@@ -24,3 +24,7 @@ output "publisher_token" {
   value       = netskope_publishers.Publisher.token
 }
 
+output "ec2_instance_id" {
+  description = "Instance Id of the EC2 Instance used for the Publisher"
+  value       = aws_instance.NPAPublisher.id
+}
