@@ -13,10 +13,10 @@ provider "aws" {
 module "publisher_aws" {
   source = "github.com/ns-sbrown/terraform-netskope-publisher-aws"
 
-  publisher_name = "publisher-name"
-  aws_key_name   = "ssh-key-name"
-  aws_subnet         = "subnet-fff0123456789"
-  aws_security_group = "sg-12345678"
+  publisher_name = "<publisher-name>"
+  aws_key_name   = "<ssh-key-name>"
+  aws_subnet         = "<subnet-id>"
+  aws_security_group = "<sg-id>"
 
 }
 ```
@@ -34,9 +34,31 @@ module "publisher_aws" {
 
   publisher_name = "publisher-name${each.key}"
 
-  aws_key_name   = "ssh-key-name"
-  aws_subnet         = "subnet-fff0123456789"
-  aws_security_group = "sg-12345678"
+  aws_key_name   = "<ssh-key-name>"
+  aws_subnet         = "<subnet-id>"
+  aws_security_group = "<sg-id>"
+
+}
+```
+
+### Use SSM Instead of User Data to Register Publishers
+```hcl
+provider "aws" {
+  region = "us-east-1"
+}
+
+module "publisher_aws" {
+  source = "github.com/ns-sbrown/terraform-netskope-publisher-aws"
+
+  for_each = toset(["01", "02", "03"])
+
+  publisher_name = "<publisher-name>${each.key}"
+
+  aws_key_name   = "<ssh-key-name>"
+  aws_subnet           = "<subnet-id>"
+  aws_security_group   = "<sg-id>"
+  iam_instance_profile = "<ssm-iam-role>"  //Must include IAM Instance Profile with SSM Policy to use SSM.
+  use_ssm              = true
 
 }
 ```
