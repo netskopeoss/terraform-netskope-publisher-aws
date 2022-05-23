@@ -25,6 +25,6 @@ output "publisher_token" {
 }
 
 output "ec2_instance_id" {
-  description = "Id of the EC2 Instance used for the Publisher"
+  description = "ID of the EC2 Instance used for the Publisher"
   value       = aws_instance.NPAPublisher.id
 }

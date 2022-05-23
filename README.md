@@ -115,7 +115,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ec2_instance_id"></a> [ec2\_instance\_id](#output\_ec2\_instance\_id) | Id of the EC2 Instance used for the Publisher |
+| <a name="output_ec2_instance_id"></a> [ec2\_instance\_id](#output\_ec2\_instance\_id) | ID of the EC2 Instance used for the Publisher |
 | <a name="output_publisher_id"></a> [publisher\_id](#output\_publisher\_id) | ID of the Publisher |
 | <a name="output_publisher_name"></a> [publisher\_name](#output\_publisher\_name) | Name of the Publisher |
 | <a name="output_publisher_private_ip"></a> [publisher\_private\_ip](#output\_publisher\_private\_ip) | Public IP of the Publisher |
