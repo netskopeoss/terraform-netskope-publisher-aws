@@ -15,7 +15,7 @@ output "publisher_public_ip" {
 }
 
 output "publisher_private_ip" {
-  description = "Public IP of the Publisher"
+  description = "Private IP of the Publisher"
   value       = aws_instance.NPAPublisher.private_ip
 }
 
