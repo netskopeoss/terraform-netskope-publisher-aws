@@ -77,17 +77,17 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_ami_id"></a> [ami\_id](#input\_ami\_id) | Publisher AMI ID - Latest will be used if this is not speciified. | `string` | `""` | no |
 | <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | Publisher Assigned Public IP or Not | `bool` | `false` | no |
-| <a name="input_aws_instance_type"></a> [aws\_instance\_type](#input\_aws\_instance\_type) | AWS Instance Type | `string` | `"t3.medium"` | no |
+| <a name="input_aws_instance_type"></a> [aws\_instance\_type](#input\_aws\_instance\_type) | AWS Instance Type - t3.medium is the reccomended instance size. | `string` | `"t3.medium"` | no |
 | <a name="input_aws_key_name"></a> [aws\_key\_name](#input\_aws\_key\_name) | AWS SSH Key Name | `string` | n/a | yes |
 | <a name="input_aws_monitoring"></a> [aws\_monitoring](#input\_aws\_monitoring) | Enable Detailed Monitoring of AWS Instance | `bool` | `true` | no |
 | <a name="input_aws_security_group"></a> [aws\_security\_group](#input\_aws\_security\_group) | AWS Security Group Id | `string` | n/a | yes |
 | <a name="input_aws_subnet"></a> [aws\_subnet](#input\_aws\_subnet) | AWS Subnet Id | `string` | n/a | yes |
 | <a name="input_ebs_optimized"></a> [ebs\_optimized](#input\_ebs\_optimized) | Enable EBS Optimized | `bool` | `true` | no |
 | <a name="input_http_endpoint"></a> [http\_endpoint](#input\_http\_endpoint) | Metadata Service enabled or disabled | `string` | `"enabled"` | no |
-| <a name="input_http_tokens"></a> [http\_tokens](#input\_http\_tokens) | Metadata Service V2 optional or reuqired - Use SSM if Required | `string` | `"optional"` | no |
+| <a name="input_http_tokens"></a> [http\_tokens](#input\_http\_tokens) | Metadata Service V2 optional or reuqired - Use SSM set to required | `string` | `"optional"` | no |
 | <a name="input_iam_instance_profile"></a> [iam\_instance\_profile](#input\_iam\_instance\_profile) | IAM Instance Profile - IAM Role to allow SSM | `string` | `""` | no |
 | <a name="input_publisher_name"></a> [publisher\_name](#input\_publisher\_name) | Publisher Name | `string` | n/a | yes |
-| <a name="input_use_ssm"></a> [use\_ssm](#input\_use\_ssm) | Use SSM to Register Publisher, must use if http\_tokens required. | `bool` | `false` | no |
+| <a name="input_use_ssm"></a> [use\_ssm](#input\_use\_ssm) | Use SSM to Register Publisher - Use if http\_tokens set to required - Must include IAM Instance Profile if used | `bool` | `false` | no |
 
 ## Outputs
 

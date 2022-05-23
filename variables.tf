@@ -4,8 +4,8 @@ variable "publisher_name" {
 }
 
 variable "aws_instance_type" {
-  description = "AWS Instance Type"
-  default     = "t3.medium" //Reccomended Publisher Type
+  description = "AWS Instance Type - t3.medium is the reccomended instance size."
+  default     = "t3.medium"
   type        = string
 }
 
@@ -61,13 +61,13 @@ variable "http_endpoint" {
 }
 
 variable "http_tokens" {
-  description = "Metadata Service V2 optional or reuqired - Use SSM if Required"
+  description = "Metadata Service V2 optional or reuqired - Use SSM set to required"
   type        = string
   default     = "optional"
 }
 
 variable "use_ssm" {
-  description = "Use SSM to Register Publisher, must use if http_tokens required."
+  description = "Use SSM to Register Publisher - Use if http_tokens set to required - Must include IAM Instance Profile if used"
   type        = bool
   default     = false
 }
