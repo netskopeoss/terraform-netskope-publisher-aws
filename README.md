@@ -57,7 +57,7 @@ module "publisher_aws" {
   aws_key_name   = "<ssh-key-name>"
   aws_subnet           = "<subnet-id>"
   aws_security_group   = "<sg-id>"
-  iam_instance_profile = "<ssm-iam-role>"  //Must include IAM Instance Profile with SSM Policy to use SSM.
+  iam_instance_profile = "<ssm-iam-role>"  //Must include IAM Instance Profile with SSM Policy.
   use_ssm              = true
 
 }
