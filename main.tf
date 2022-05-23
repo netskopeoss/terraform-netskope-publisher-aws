@@ -69,8 +69,6 @@ resource "aws_ssm_document" "PublisherRegistration" {
 DOC
 }
 
-
-
 resource "aws_ssm_association" "register_publishers" {
   count = "${var.use_ssm == true ? 1 : 0}"
   name = "SSM-Register-${var.publisher_name}"

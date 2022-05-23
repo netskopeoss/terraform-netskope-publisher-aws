@@ -38,36 +38,36 @@ variable "aws_subnet" {
 }
 
 variable "aws_security_group" {
-  description = "AWS SG Id"
+  description = "AWS Security Group Id"
   type        = string
 }
 
 variable "ami_id" {
-  description = "Publisher AMI ID"
+  description = "Publisher AMI ID - Latest will be used if this is not speciified."
   default     = ""
   type        = string
 }
 
 variable "iam_instance_profile" {
-  description = "IAM Instance Profile"
+  description = "IAM Instance Profile - IAM Role to allow SSM"
   default     = ""
   type        = string
 }
 
 variable "http_endpoint" {
-  description = "Metadata Option http_endpoint"
+  description = "Metadata Service enabled or disabled"
   type        = string
   default     = "enabled"
 }
 
 variable "http_tokens" {
-  description = "Metadata Service Option http_tokens"
+  description = "Metadata Service V2 optional or reuqired - Use SSM if Required"
   type        = string
   default     = "optional"
 }
 
 variable "use_ssm" {
-  description = "Use SSM to Register Publisher"
+  description = "Use SSM to Register Publisher, must use if http_tokens required."
   type        = bool
   default     = false
 }
