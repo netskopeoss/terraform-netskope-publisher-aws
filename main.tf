@@ -43,6 +43,7 @@ resource "aws_instance" "NPAPublisher" {
 
 }
 
+//Create SSM Document for Publisher
 resource "aws_ssm_document" "PublisherRegistration" {
   count = "${var.use_ssm == true ? 1 : 0}"
   name          = "SSM-Register-${var.publisher_name}"
@@ -69,6 +70,7 @@ resource "aws_ssm_document" "PublisherRegistration" {
 DOC
 }
 
+//Associate Publisher with SSM
 resource "aws_ssm_association" "register_publishers" {
   count = "${var.use_ssm == true ? 1 : 0}"
   name = "SSM-Register-${var.publisher_name}"
