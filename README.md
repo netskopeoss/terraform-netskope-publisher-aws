@@ -10,8 +10,9 @@ provider "aws" {
   region = "us-east-1"
 }
 
-module "publisher_aws" {
-  source = "github.com/ns-sbrown/terraform-netskope-publisher-aws"
+module "publisher-aws" {
+  source  = "netskopeoss/publisher-aws/netskope"
+  version = "0.1.0"
 
   publisher_name = "<publisher-name>"
   aws_key_name   = "<ssh-key-name>"
@@ -27,8 +28,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
-module "publisher_aws" {
-  source = "github.com/ns-sbrown/terraform-netskope-publisher-aws"
+module "publisher-aws" {
+  source  = "netskopeoss/publisher-aws/netskope"
+  version = "0.1.0"
+
 
   for_each = toset(["01", "02", "03"])
 
@@ -47,8 +50,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
-module "publisher_aws" {
-  source = "github.com/ns-sbrown/terraform-netskope-publisher-aws"
+module "publisher-aws" {
+  source  = "netskopeoss/publisher-aws/netskope"
+  version = "0.1.0"
+
 
   for_each = toset(["01", "02", "03"])
 
