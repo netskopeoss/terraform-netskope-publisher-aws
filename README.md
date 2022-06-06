@@ -12,7 +12,7 @@ provider "aws" {
 
 module "publisher-aws" {
   source  = "netskopeoss/publisher-aws/netskope"
-  version = "0.1.0"
+  version = "0.1.1"
 
   publisher_name = "<publisher-name>"
   aws_key_name   = "<ssh-key-name>"
@@ -30,7 +30,7 @@ provider "aws" {
 
 module "publisher-aws" {
   source  = "netskopeoss/publisher-aws/netskope"
-  version = "0.1.0"
+  version = "0.1.1"
 
 
   for_each = toset(["01", "02", "03"])
@@ -52,7 +52,7 @@ provider "aws" {
 
 module "publisher-aws" {
   source  = "netskopeoss/publisher-aws/netskope"
-  version = "0.1.0"
+  version = "0.1.1"
 
 
   for_each = toset(["01", "02", "03"])
